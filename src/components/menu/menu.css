@@ -1,0 +1,57 @@
+.app-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #FFFFFF;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    animation: underlineHover 0.3s forwards;
+}
+
+/* Estado ativo */
+.nav-link.active {
+    color: #000000;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #111111;
+}
+
+@keyframes underlineHover {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Restante do CSS mantido igual */
