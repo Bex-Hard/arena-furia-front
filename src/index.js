@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './components/index.css';
+import './components/chatroom/chatroom.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

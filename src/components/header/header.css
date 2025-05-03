@@ -12,7 +12,7 @@ header-logo--placeholder {
 }
 
 .header-logo img {
-    width: 60px;    /* mesma largura do logo real */
+    width: 60px;
     height: 45px;
     padding: 8px;
 }
