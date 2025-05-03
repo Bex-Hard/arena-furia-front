@@ -59,7 +59,7 @@ ul {
   display: flex;
   flex-direction: column;
   border-radius: 30px;
-  background-image: url('../assets/images/furiagg_wallpaper_raian.jpg');
+  background-image: url('../../assets/images/wallpaper_furia.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -72,7 +72,7 @@ ul {
   font-size: 1.5em;
   font-weight: normal;
   padding: 15px 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #fff;
   color: #fff;
 }
 

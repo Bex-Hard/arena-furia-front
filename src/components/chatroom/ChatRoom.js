@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { over } from 'stompjs';
 import SockJS from 'sockjs-client';
-import styles from './index.css';
+import styles from './chatroom.css';
 import {Send} from 'lucide-react';
 
 
