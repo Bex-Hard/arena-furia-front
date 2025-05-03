@@ -1,0 +1,94 @@
+.app-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 150px; /* Altura aumentada */
+    padding: 40px 20px; /* Espaçamento interno maior */
+    background-color: #fff;
+    border-top: 1px solid #151414;
+    justify-content: space-between; /* Distribuição vertical */
+    position: relative; /* Para posicionamento absoluto do brand */
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 80px;
+    height: auto;
+}
+
+.footer-title {
+    display: flex;
+    font-size: 18px; /* Tamanho original */
+}
+
+.arena {
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.furia {
+    font-weight: normal;
+    letter-spacing: 6px; /* Espaçamento original */
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.site-oficial {
+    text-decoration: none;
+    color: inherit;
+    font-style: normal;
+}
+
+.site-oficial i {
+    font-style: italic;
+}
+
+.site-oficial:hover i {
+    text-decoration: underline;
+}
+
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px; /* Tamanho do texto */
+}
+.instagram-link img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s;
+}
+
+.instagram-icon:hover {
+    opacity: 0.7;
+}
+
+/* Versão Desktop */
+@media (min-width: 768px) {
+    .app-footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links {
+        margin-left: auto;
+    }
+}
