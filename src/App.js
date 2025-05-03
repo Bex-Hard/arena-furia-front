@@ -1,4 +1,4 @@
-import './App.css';
+import './assets/styles/global.css';
 import ChatRoom from "./components/ChatRoom";
 
 function App() {

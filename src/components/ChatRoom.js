@@ -1,120 +1,144 @@
-import React, { useEffect, useState } from 'react'
-import {over} from 'stompjs';
+import React, { useEffect, useState } from 'react';
+import { over } from 'stompjs';
 import SockJS from 'sockjs-client';
+import styles from './index.css';
+import {Send} from 'lucide-react';
 
-var stompClient =null;
+
+let stompClient = null;
+
 const ChatRoom = () => {
-    //const [privateChats, setPrivateChats] = useState(new Map());
     const [publicChats, setPublicChats] = useState([]);
-    const [tab,setTab] =useState("CHATROOM");
+    const [tab, setTab] = useState('CHATROOM');
     const [userData, setUserData] = useState({
         username: '',
         receivername: '',
         connected: false,
-        message: ''
+        message: '',
     });
+
     useEffect(() => {
         console.log(userData);
     }, [userData]);
 
-    const connect =()=>{
-        let Sock = new SockJS('http://localhost:8080/ws');
+    const connect = () => {
+        const Sock = new SockJS('http://localhost:8080/ws');
         stompClient = over(Sock);
-        stompClient.connect({},onConnected, onError);
-    }
+        stompClient.connect({}, onConnected, onError);
+    };
 
     const onConnected = () => {
-        setUserData({...userData,"connected": true});
+        setUserData((prev) => ({ ...prev, connected: true }));
         stompClient.subscribe('/chatroom/public', onMessageReceived);
         userJoin();
-    }
+    };
 
-    const userJoin=()=>{
-        var chatMessage = {
+    const userJoin = () => {
+        const chatMessage = {
             senderName: userData.username,
-            status:"JOIN"
+            status: 'JOIN',
         };
-        stompClient.send("/app/message", {}, JSON.stringify(chatMessage));
-    }
+        stompClient.send('/app/message', {}, JSON.stringify(chatMessage));
+    };
 
-    const onMessageReceived = (payload)=>{
-        var payloadData = JSON.parse(payload.body);
-        switch(payloadData.status){
-            case "JOIN":
-                break;
-            case "MESSAGE":
-                publicChats.push(payloadData);
-                setPublicChats([...publicChats]);
-                break;
+    const onMessageReceived = (payload) => {
+        const payloadData = JSON.parse(payload.body);
+        if (payloadData.status === 'MESSAGE') {
+            setPublicChats((prev) => [...prev, payloadData]);
         }
-    }
-
+    };
 
     const onError = (err) => {
-        console.log(err);
+        console.error(err);
+    };
 
-    }
+    const handleMessage = (e) => {
+        setUserData((prev) => ({ ...prev, message: e.target.value }));
+    };
 
-    const handleMessage =(event)=>{
-        const {value}=event.target;
-        setUserData({...userData,"message": value});
-    }
-    const sendValue=()=>{
+    const sendValue = () => {
         if (stompClient) {
-            var chatMessage = {
+            const chatMessage = {
                 senderName: userData.username,
                 message: userData.message,
-                status:"MESSAGE"
+                status: 'MESSAGE',
             };
-            console.log(chatMessage);
-            stompClient.send("/app/message", {}, JSON.stringify(chatMessage));
-            setUserData({...userData,"message": ""});
+            stompClient.send('/app/message', {}, JSON.stringify(chatMessage));
+            setUserData((prev) => ({ ...prev, message: '' }));
         }
-    }
+    };
 
-    const handleUsername=(event)=>{
-        const {value}=event.target;
-        setUserData({...userData,"username": value});
-    }
+    const handleUsername = (e) => {
+        setUserData((prev) => ({ ...prev, username: e.target.value }));
+    };
 
-    const registerUser=()=>{
+    const registerUser = () => {
         connect();
-    }
+    };
+
     return (
         <div className="container">
-            {userData.connected?
-                <div className="chat-box">
-                    <div className="member-list">
-                        <ul>
-                            <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM" && "active"}`}>Chatroom</li>
-                        </ul>
+            {userData.connected ? (
+                <>
+                    <div className="chat-box">
+                        {/* Header interno */}
+                        <div className="chat-header">
+                            CS - FURIA vs paiN | 30/06/2025 | 20h
+                        </div>
+                        {tab === 'CHATROOM' ? (
+                            <div className="chat-content">
+                                <ul className="chat-messages">
+                                    {publicChats.map((chat, idx) => (
+                                        <li
+                                            key={idx}
+                                            className={`message ${
+                                                chat.senderName === userData.username ? 'self' : ''
+                                            }`}
+                                        >
+                                            {chat.senderName !== userData.username && (
+                                                <div className="avatar">{chat.senderName}</div>
+                                            )}
+                                            <div className="message-data">{chat.message}</div>
+                                            {chat.senderName === userData.username && (
+                                                <div className="avatar self">{chat.senderName}</div>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div className="send-message">
+                                    <input
+                                        type="text"
+                                        className="input-message transparent-input"
+                                        placeholder="enter the message"
+                                        value={userData.message}
+                                        onChange={handleMessage}
+                                    />
+                                    <button
+                                        type="button"
+                                        className="send-button icon-button"
+                                        onClick={sendValue}
+                                    >
+                                        <Send size={20} />
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="chat-content">
+                                <ul className="chat-messages" />
+                                <div className="send-message">
+                                    <input
+                                        type="text"
+                                        className="input-message"
+                                        placeholder="enter the message"
+                                        value={userData.message}
+                                        onChange={handleMessage}
+                                    />
+                                </div>
+                            </div>
+                        )}
                     </div>
-                    {tab==="CHATROOM" && <div className="chat-content">
-                        <ul className="chat-messages">
-                            {publicChats.map((chat,index)=>(
-                                <li className={`message ${chat.senderName === userData.username && "self"}`} key={index}>
-                                    {chat.senderName !== userData.username && <div className="avatar">{chat.senderName}</div>}
-                                    <div className="message-data">{chat.message}</div>
-                                    {chat.senderName === userData.username && <div className="avatar self">{chat.senderName}</div>}
-                                </li>
-                            ))}
-                        </ul>
-
-                        <div className="send-message">
-                            <input type="text" className="input-message" placeholder="enter the message" value={userData.message} onChange={handleMessage} />
-                            <button type="button" className="send-button" onClick={sendValue}>send</button>
-                        </div>
-                    </div>}
-                    {tab!=="CHATROOM" && <div className="chat-content">
-                        <ul className="chat-messages">
-                        </ul>
-
-                        <div className="send-message">
-                            <input type="text" className="input-message" placeholder="enter the message" value={userData.message} onChange={handleMessage} />
-                        </div>
-                    </div>}
-                </div>
-                :
+                </>
+            ) : (
                 <div className="register">
                     <input
                         id="user-name"
@@ -122,14 +146,14 @@ const ChatRoom = () => {
                         name="userName"
                         value={userData.username}
                         onChange={handleUsername}
-                        margin="normal"
                     />
                     <button type="button" onClick={registerUser}>
                         connect
                     </button>
-                </div>}
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default ChatRoom
+export default ChatRoom;
