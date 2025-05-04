@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
 import './login.css';
 import wallpaper_furia from '../../assets/images/wallpaper_cortado.jpg';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -34,10 +34,25 @@ const Login = () => {
                             placeholder="senha"
                             className="login-input"
                         />
+                        <button type="submit" className="login-button">
+                            Entrar
+                        </button>
                     </form>
-                    <button type="submit" className="login-button">
-                        Entrar
-                    </button>
+
+                    {/* Link de registro simplificado */}
+                    <div className="register-link">
+                        <span>ou </span>
+                        <a
+                            href="/registro"
+                            className="register-anchor"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                alert('Funcionalidade de registro desativada temporariamente');
+                            }}
+                        >
+                            registre-se
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
