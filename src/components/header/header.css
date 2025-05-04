@@ -13,7 +13,7 @@ header-logo--placeholder {
 
 .header-logo img {
     width: 60px;
-    height: 45px;
+    height: auto;
     padding: 8px;
 }
 
