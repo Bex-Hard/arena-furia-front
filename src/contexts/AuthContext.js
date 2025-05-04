@@ -32,7 +32,7 @@ function AuthProvider({ children }) {
             username: decoded.username
         });
 
-        navigate('/chatroom', { replace: true });
+        navigate('/', { replace: true });
     }
 
     async function register(username, email, password) {
@@ -44,7 +44,7 @@ function AuthProvider({ children }) {
     function logout() {
         localStorage.removeItem('token');
         setUser(null);
-        navigate('/login', { replace: true });
+        navigate('/', { replace: true });
     }
 
     return (
