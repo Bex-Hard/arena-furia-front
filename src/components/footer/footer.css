@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 150px; /* Altura aumentada */
-    padding: 40px 20px; /* Espaçamento interno maior */
+    min-height: 150px;
+    padding: 40px 20px;
     background-color: #fff;
     border-top: 1px solid #151414;
     justify-content: space-between; /* Distribuição vertical */
@@ -23,7 +23,7 @@
 
 .footer-title {
     display: flex;
-    font-size: 18px; /* Tamanho original */
+    font-size: 22px;
 }
 
 .arena {
@@ -33,7 +33,7 @@
 
 .furia {
     font-weight: normal;
-    letter-spacing: 6px; /* Espaçamento original */
+    letter-spacing: 6px;
     text-transform: uppercase;
 }
 

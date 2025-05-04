@@ -21,8 +21,8 @@ function Footer() {
                     <img src={icon_furia} alt="Ícone FURIA" />
                 </div>
                 <div className="footer-title">
-                    <span className="arena">arena </span>
-                    <span className="furia"> furia</span>
+                    <span className="arena">arena</span>
+                    <span className="furia">furia</span>
                 </div>
             </div>
 
