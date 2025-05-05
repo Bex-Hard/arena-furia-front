@@ -1,0 +1,186 @@
+/* Adicionar ao landingpage.css */
+/* landingpage.css */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-arrow.left {
+    left: 2rem;
+}
+
+.carousel-arrow.right {
+    right: 2rem;
+}
+
+/* Texto Principal */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.main-heading {
+    margin-bottom: 2rem;
+}
+
+.converse {
+    display: block;
+    font-weight: bold;
+    font-size: 156px;
+    line-height: 1;
+}
+
+.subheading {
+    display: block;
+    font-weight: bold;
+    font-size: 95px;
+    margin-top: 1rem;
+}
+
+.vibra {
+    display: block;
+    font-weight: normal;
+    font-size: 65px;
+    margin-top: 0.5rem;
+}
+
+/* Botão CTA */
+.cta-button {
+    display: inline-block;
+    background: #000000;
+    color: white;
+    padding: 1.5rem 4rem;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-top: 3rem;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #333;
+}
+.mid-text{
+    font-weight: bold;
+    font-size: 35px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .converse {
+        font-size: 80px;
+    }
+
+    .subheading {
+        font-size: 50px;
+    }
+
+    .vibra {
+        font-size: 35px;
+    }
+
+    .cta-button {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Seção de Features */
+.features-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 4rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.feature-card {
+    flex: 1;
+    border: 1px solid #111;
+    background: rgba(255,255,255,0.9);
+    padding: 2rem;
+    text-align: center;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #111;
+}
+
+.feature-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Chamada Final */
+.final-cta {
+    font-weight: bold;
+    font-size: 69px;
+    text-align: center;
+    margin: 4rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .features-container {
+        flex-direction: column;
+    }
+
+    .final-cta {
+        font-size: 40px;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .final-cta {
+        font-size: 32px;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+    }
+}

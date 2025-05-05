@@ -142,7 +142,7 @@ const ChatRoom = () => {
                 <div className="register">
                     <input
                         id="user-name"
-                        placeholder="Enter your name"
+                        placeholder="Enter your nickname"
                         name="userName"
                         value={userData.username}
                         onChange={handleUsername}

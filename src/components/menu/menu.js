@@ -1,18 +1,18 @@
 import React from 'react';
 import './menu.css'
+import {Link} from "react-router-dom";
 
 function Menu() {
     return (
         <nav className="app-menu">
-            {/* Links Centrais com separadores */}
             <div className="nav-links">
-                <a href="/" className="nav-link active">Home</a>
+                <Link to="/" className="nav-link active">Home</Link>
                 <span className="separator">|</span>
-                <a href="/livechat" className="nav-link">LiveChat</a>
+                <Link to="/chatroom" className="nav-link">LiveChat</Link>
                 <span className="separator">|</span>
-                <a href="/chatbot" className="nav-link">ChatBot</a>
+                <Link to="/chatbot" className="nav-link">ChatBot</Link>
             </div>
         </nav>
-    )
+    );
 }
 export default Menu;
