@@ -1,0 +1,204 @@
+/**
+ * Container principal do chatbot
+ * Posiciona o botão/janela no canto inferior direito
+ */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/**
+ * Estilização do botão flutuante do chatbot
+ * Usa as cores da FURIA e efeitos de hover
+ */
+.chatbot-button {
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/**
+ * Efeito de hover no botão
+ * Eleva levemente o botão e aumenta a sombra
+ */
+.chatbot-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Janela principal do chat
+ * Define dimensões e estilo da janela de conversa
+ */
+.chatbot-window {
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/**
+ * Cabeçalho da janela do chat
+ * Contém título e botão de fechar
+ */
+.chatbot-header {
+    background-color: #ff4655;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/**
+ * Estilização do título no cabeçalho
+ */
+.chatbot-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/**
+ * Botão de fechar a janela
+ * Estilo minimalista com ícone
+ */
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/**
+ * Área de mensagens do chat
+ * Permite rolagem e organiza as mensagens
+ */
+.chatbot-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+}
+
+/**
+ * Container de cada mensagem
+ * Define layout e espaçamento
+ */
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/**
+ * Alinhamento das mensagens do usuário
+ * Posiciona à direita
+ */
+.message.user {
+    align-items: flex-end;
+}
+
+/**
+ * Alinhamento das mensagens do bot
+ * Posiciona à esquerda
+ */
+.message.bot {
+    align-items: flex-start;
+}
+
+/**
+ * Conteúdo de cada mensagem
+ * Define estilo e formatação do texto
+ */
+.message-content {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    white-space: pre-line;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/**
+ * Estilo das mensagens do usuário
+ * Usa a cor principal da FURIA
+ */
+.message.user .message-content {
+    background-color: #ff4655;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+/**
+ * Estilo das mensagens do bot
+ * Usa cores neutras para contraste
+ */
+.message.bot .message-content {
+    background-color: #e9ecef;
+    color: #212529;
+    border-bottom-left-radius: 5px;
+}
+
+/**
+ * Área de input do chat
+ * Contém campo de texto e botão de envio
+ */
+.chatbot-input {
+    padding: 15px;
+    background-color: white;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    gap: 10px;
+}
+
+/**
+ * Campo de input de texto
+ * Estilização do campo de digitação
+ */
+.chatbot-input input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.9em;
+}
+
+/**
+ * Botão de envio de mensagem
+ * Estilo circular com ícone
+ */
+.chatbot-input button {
+    background-color: #ff4655;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+/**
+ * Efeito hover no botão de envio
+ * Escurece levemente a cor
+ */
+.chatbot-input button:hover {
+    background-color: #e63e4c;
+}

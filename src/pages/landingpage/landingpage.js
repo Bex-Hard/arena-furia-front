@@ -6,6 +6,7 @@ import Menu from '../../components/menu/menu';
 import Footer from '../../components/footer/Footer';
 import './landingpage.css';
 import {ArrowRight, ArrowLeft, HeartHandshake, HandHeart, MessagesSquare} from 'lucide-react';
+import telegram from "../../assets/images/external-icons/telegram.svg";
 
 const LandingPage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -86,7 +87,18 @@ const LandingPage = () => {
                         <MessagesSquare className="feature-icon" />
                     </div>
                 </div>
-
+                {/* Seção do Telegram */}
+                <div className="telegram-cta">
+                    <a
+                        href="https://t.me/hard_furioso_bot"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="telegram-link"
+                    >
+                        <span>Converse com o nosso bot também no Telegram</span>
+                        <img src={telegram} alt="Telegram FURIA" />
+                    </a>
+                </div>
                 {/* Chamada Final */}
                 <h2 className="final-cta">
                     JUNTE-SE À TORCIDA FURIOSA
