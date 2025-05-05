@@ -1,7 +1,6 @@
 import React from 'react';
 import './header.css'
 import icon_furia from '../../assets/images/icon_furia.png';
-import {UserRound} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 function Header() {
