@@ -8,8 +8,6 @@ Arena FURIA é uma plataforma de chat interativa desenvolvida para os fãs da FU
 ### 💬 Chat em Tempo Real
 - Interface moderna e responsiva
 - Sistema de mensagens em tempo real
-- Suporte a emojis e formatação de texto
-- Indicadores de status de usuário
 
 ### 🤖 ChatBot Oficial da FURIA
 - Comandos interativos para informações do time
@@ -22,8 +20,6 @@ Arena FURIA é uma plataforma de chat interativa desenvolvida para os fãs da FU
 ### 🔐 Sistema de Autenticação
 - Login seguro com JWT
 - Registro de novos usuários
-- Recuperação de senha
-- Perfil de usuário personalizado
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -36,24 +32,24 @@ Arena FURIA é uma plataforma de chat interativa desenvolvida para os fãs da FU
 - Lucide React para ícones
 
 ### Backend
-- Node.js
-- Express.js
+- Java
+- SpringBoot
 - JWT para autenticação
 - WebSocket para chat em tempo real
-- MongoDB para banco de dados
+- PostgreSQL para banco de dados
 
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
 - Node.js (versão 14 ou superior)
 - npm ou yarn
-- MongoDB instalado e rodando
+- PostgreSQL instalado e rodando
 
 ### Instalação
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/arena-furia.git
+git clone https://github.com/Bex-Hard/arena-furia-front
 cd arena-furia
 ```
 
@@ -73,8 +69,10 @@ npm install
 ```bash
 # No diretório server, crie um arquivo .env com:
 PORT=8080
-MONGODB_URI=sua_uri_do_mongodb
-JWT_SECRET=seu_secret_jwt
+DB_URL=sua_URL
+DB_USERNAME=seu_username
+DB_PASSWORD=sua_senha
+JWT_SECRET=seu_segredo
 ```
 
 5. Inicie o servidor:
@@ -101,9 +99,8 @@ npm start
 ## 🎨 Interface
 
 O projeto segue a identidade visual da FURIA Esports, utilizando:
-- Cores principais: Preto e Vermelho (#FF4655)
+- Cores principais: Preto e Branco (#FF4655)
 - Design moderno e minimalista
-- Layout responsivo para todos os dispositivos
 - Animações suaves e interativas
 
 ## 🤝 Contribuindo
@@ -114,19 +111,8 @@ O projeto segue a identidade visual da FURIA Esports, utilizando:
 4. Push para a Branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 📞 Suporte
-
-Para suporte, envie um email para suporte@arenafuria.com ou abra uma issue no GitHub.
-
-## 🙏 Agradecimentos
-
-- FURIA Esports pela inspiração
-- Comunidade de desenvolvedores React
-- Todos os contribuidores do projeto
+- Para suporte, envie um email para rebeccahardman@gmail.com ou abra uma issue no GitHub.
 
 ---
-Desenvolvido com ❤️ pela equipe Arena FURIA
+Desenvolvido por Rebecca Hardman
