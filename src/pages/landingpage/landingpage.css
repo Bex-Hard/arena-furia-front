@@ -157,6 +157,45 @@
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+/* Seção Telegram */
+.telegram-cta {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.telegram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.telegram-link:hover {
+    background: #151414;
+    transform: translateY(-2px);
+}
+
+.telegram-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .telegram-link {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .telegram-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
 
 /* Responsivo */
 @media (max-width: 1024px) {
