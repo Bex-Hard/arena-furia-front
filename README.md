@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# 🐺 Arena FURIA - Chat App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📝 Descrição
+Arena FURIA é uma plataforma de chat interativa desenvolvida para os fãs da FURIA Esports. O projeto oferece um ambiente onde os torcedores podem se conectar, compartilhar momentos e interagir com um chatbot oficial da FURIA.
 
-## Available Scripts
+## ✨ Funcionalidades Principais
 
-In the project directory, you can run:
+### 💬 Chat em Tempo Real
+- Interface moderna e responsiva
+- Sistema de mensagens em tempo real
+- Suporte a emojis e formatação de texto
+- Indicadores de status de usuário
 
-### `npm start`
+### 🤖 ChatBot Oficial da FURIA
+- Comandos interativos para informações do time
+- Agenda de jogos atualizada
+- Estatísticas do time
+- Curiosidades sobre a FURIA
+- Informações sobre campeonatos
+- Integração com Telegram
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🔐 Sistema de Autenticação
+- Login seguro com JWT
+- Registro de novos usuários
+- Recuperação de senha
+- Perfil de usuário personalizado
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tecnologias Utilizadas
 
-### `npm test`
+### Frontend
+- React.js
+- CSS3 com Flexbox e Grid
+- Axios para requisições HTTP
+- React Router para navegação
+- Context API para gerenciamento de estado
+- Lucide React para ícones
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+- Node.js
+- Express.js
+- JWT para autenticação
+- WebSocket para chat em tempo real
+- MongoDB para banco de dados
 
-### `npm run build`
+## 🚀 Como Executar o Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pré-requisitos
+- Node.js (versão 14 ou superior)
+- npm ou yarn
+- MongoDB instalado e rodando
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instalação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/arena-furia.git
+cd arena-furia
+```
 
-### `npm run eject`
+2. Instale as dependências do frontend:
+```bash
+cd chat-app
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Instale as dependências do backend:
+```bash
+cd ../server
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Configure as variáveis de ambiente:
+```bash
+# No diretório server, crie um arquivo .env com:
+PORT=8080
+MONGODB_URI=sua_uri_do_mongodb
+JWT_SECRET=seu_secret_jwt
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Inicie o servidor:
+```bash
+cd ../server
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. Em outro terminal, inicie o frontend:
+```bash
+cd ../chat-app
+npm start
+```
 
-## Learn More
+## 📱 Comandos do ChatBot
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `/ajuda` - Lista todos os comandos disponíveis
+- `/jogos` - Mostra a agenda de próximos jogos
+- `/estatisticas` - Exibe estatísticas do time
+- `/curiosidades` - Compartilha fatos interessantes sobre a FURIA
+- `/campeonatos` - Lista os campeonatos atuais
+- `/telegram` - Link para o bot no Telegram
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎨 Interface
 
-### Code Splitting
+O projeto segue a identidade visual da FURIA Esports, utilizando:
+- Cores principais: Preto e Vermelho (#FF4655)
+- Design moderno e minimalista
+- Layout responsivo para todos os dispositivos
+- Animações suaves e interativas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contribuindo
 
-### Analyzing the Bundle Size
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📄 Licença
 
-### Making a Progressive Web App
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📞 Suporte
 
-### Advanced Configuration
+Para suporte, envie um email para suporte@arenafuria.com ou abra uma issue no GitHub.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🙏 Agradecimentos
 
-### Deployment
+- FURIA Esports pela inspiração
+- Comunidade de desenvolvedores React
+- Todos os contribuidores do projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Desenvolvido com ❤️ pela equipe Arena FURIA

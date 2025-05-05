@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './chatbot.css';
 import { Send, X } from 'lucide-react';
+import axios from 'axios';
 
 // Dados do chatbot
 const JOGOS = [
@@ -29,13 +30,40 @@ const CAMPEONATOS = [
     "IEM Rio - Qualificatórias em maio"
 ];
 
+/**
+ * Instância do Axios configurada para a API
+ * @constant
+ * @type {AxiosInstance}
+ */
+const api = axios.create({
+    baseURL: 'http://localhost:8080',
+});
+
+/**
+ * Interceptor para adicionar token de autenticação
+ * @function
+ * @param {Object} config - Configuração da requisição
+ * @returns {Object} Configuração modificada com token
+ */
+api.interceptors.request.use(config => {
+    // ... código existente ...
+});
+
+/**
+ * Componente principal do ChatBot da FURIA
+ * @component
+ * @returns {JSX.Element} Interface do chatbot com funcionalidades de interação
+ */
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
 
+    /**
+     * Efeito que envia mensagem inicial quando o chat é aberto
+     * @effect
+     */
     useEffect(() => {
-        // Mensagem inicial quando o chat é aberto
         if (isOpen && messages.length === 0) {
             setMessages([{
                 sender: 'bot',
@@ -44,6 +72,11 @@ const ChatBot = () => {
         }
     }, [isOpen]);
 
+    /**
+     * Processa os comandos recebidos do usuário
+     * @param {string} command - Comando recebido do usuário
+     * @returns {string} Resposta formatada do bot
+     */
     const processCommand = (command) => {
         switch(command.toLowerCase()) {
             case '/jogos':
@@ -68,6 +101,11 @@ const ChatBot = () => {
         }
     };
 
+    /**
+     * Manipula o envio de mensagens
+     * @function
+     * @description Adiciona a mensagem do usuário e processa comandos
+     */
     const handleSendMessage = () => {
         if (!inputMessage.trim()) return;
 
@@ -89,6 +127,11 @@ const ChatBot = () => {
         setInputMessage('');
     };
 
+    /**
+     * Manipula o evento de pressionar tecla
+     * Permite enviar mensagem com Enter
+     * @param {KeyboardEvent} e - Evento de tecla
+     */
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             handleSendMessage();
