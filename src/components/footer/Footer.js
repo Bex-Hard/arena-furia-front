@@ -2,6 +2,7 @@ import React from 'react';
 import './footer.css'
 import icon_furia from '../../assets/images/icon_furia.png';
 import instagram from '../../assets/images/external-icons/instagram.svg';
+import telegram from '../../assets/images/external-icons/telegram.svg';
 
 function Footer() {
     return (
@@ -35,6 +36,15 @@ function Footer() {
                 >
                     siga FURIA
                     <img src={instagram} alt="Instagram FURIA" />
+                </a>
+                <a
+                    href="https://t.me/hard_furioso_bot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="telegram-link"
+                >
+                    converse com nosso bot
+                    <img src={telegram} alt="Telegram FURIA" />
                 </a>
             </div>
         </footer>

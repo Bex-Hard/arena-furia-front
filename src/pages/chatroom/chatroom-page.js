@@ -4,6 +4,7 @@ import Menu from '../../components/menu/menu';
 import ChatRoom from '../../components/chatroom/ChatRoom';
 import Footer from '../../components/footer/Footer';
 import './chatroompage.css';
+import ChatBot from "../../components/chatbot/chatbot";
 
 const ChatRoomPage = () => {
     return(
@@ -18,6 +19,9 @@ const ChatRoomPage = () => {
                 <div className="title-container">
                     <h1 className="main-title">A casa oficial dos fãs da FURIA</h1>
                 </div>
+            </div>
+            <div className="bot-container">
+                <ChatBot/>
             </div>
             <Footer />
         </div>

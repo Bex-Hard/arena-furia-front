@@ -9,8 +9,6 @@ function Menu() {
                 <Link to="/" className="nav-link active">Home</Link>
                 <span className="separator">|</span>
                 <Link to="/chatroom" className="nav-link">LiveChat</Link>
-                <span className="separator">|</span>
-                <Link to="/chatbot" className="nav-link">ChatBot</Link>
             </div>
         </nav>
     );
