@@ -49,7 +49,7 @@ Arena FURIA é uma plataforma de chat interativa desenvolvida para os fãs da FU
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/Bex-Hard/arena-furia-front
+git clone https://github.com/Bex-Hard/arenaFuria
 cd arena-furia
 ```
 
@@ -59,10 +59,9 @@ cd chat-app
 npm install
 ```
 
-3. Instale as dependências do backend:
+3. Tenha o backend clonado e configurado:
 ```bash
-cd ../server
-npm install
+git clone https://github.com/Bex-Hard/arena-furia-front
 ```
 
 4. Configure as variáveis de ambiente:
@@ -102,6 +101,7 @@ O projeto segue a identidade visual da FURIA Esports, utilizando:
 - Cores principais: Preto e Branco (#FF4655)
 - Design moderno e minimalista
 - Animações suaves e interativas
+- Estilo Street
 
 ## 🤝 Contribuindo
 
