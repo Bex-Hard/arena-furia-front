@@ -3,6 +3,9 @@
 ## 📝 Descrição
 Arena FURIA é uma plataforma de chat interativa desenvolvida para os fãs da FURIA Esports. O projeto oferece um ambiente onde os torcedores podem se conectar, compartilhar momentos e interagir com um chatbot oficial da FURIA.
 
+## Branch de desenvolvimento
+  /Developer
+
 ## ✨ Funcionalidades Principais
 
 ### 💬 Chat em Tempo Real
