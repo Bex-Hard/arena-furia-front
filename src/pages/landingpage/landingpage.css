@@ -114,6 +114,7 @@
     justify-content: center;
     text-align: center;
 }
+.feature-card:hover {opacity: .6;}
 
 .feature-icon {
     font-size: 3rem;
