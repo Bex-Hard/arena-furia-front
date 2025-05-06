@@ -1,12 +1,13 @@
-/* Adicionar ao landingpage.css */
 /* landingpage.css */
+
+/* ===== Estrutura Principal ===== */
 .landing-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Carrossel */
+/* ===== Carrossel ===== */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -34,15 +35,10 @@
     z-index: 10;
 }
 
-.carousel-arrow.left {
-    left: 2rem;
-}
+.carousel-arrow.left { left: 2rem; }
+.carousel-arrow.right { right: 2rem; }
 
-.carousel-arrow.right {
-    right: 2rem;
-}
-
-/* Texto Principal */
+/* ===== Seção Hero ===== */
 .hero-section {
     text-align: center;
     padding: 4rem 2rem;
@@ -54,26 +50,32 @@
 
 .converse {
     display: block;
-    font-weight: bold;
     font-size: 156px;
+    font-weight: bold;
     line-height: 1;
 }
 
 .subheading {
     display: block;
-    font-weight: bold;
     font-size: 95px;
+    font-weight: bold;
     margin-top: 1rem;
 }
 
 .vibra {
     display: block;
-    font-weight: normal;
     font-size: 65px;
+    font-weight: normal;
     margin-top: 0.5rem;
 }
 
-/* Botão CTA */
+.mid-text {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* ===== Botões ===== */
 .cta-button {
     display: inline-block;
     background: #000000;
@@ -88,32 +90,8 @@
 .cta-button:hover {
     background: #333;
 }
-.mid-text{
-    font-weight: bold;
-    font-size: 35px;
-}
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .converse {
-        font-size: 80px;
-    }
-
-    .subheading {
-        font-size: 50px;
-    }
-
-    .vibra {
-        font-size: 35px;
-    }
-
-    .cta-button {
-        font-size: 1.5rem;
-        padding: 1rem 2rem;
-    }
-}
-
-/* Seção de Features */
+/* ===== Seção de Recursos ===== */
 .features-container {
     display: flex;
     justify-content: space-between;
@@ -125,22 +103,22 @@
 
 .feature-card {
     flex: 1;
+    min-height: 250px;
+    padding: 2rem;
     border: 1px solid #111;
     background: rgba(255,255,255,0.9);
-    padding: 2rem;
-    text-align: center;
-    min-height: 250px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    text-align: center;
 }
 
 .feature-icon {
     font-size: 3rem;
-    margin-bottom: 1.5rem;
     color: #111;
+    margin-bottom: 1.5rem;
 }
 
 .feature-text {
@@ -148,56 +126,41 @@
     line-height: 1.4;
 }
 
-/* Chamada Final */
+/* ===== Chamadas Finais ===== */
 .final-cta {
-    font-weight: bold;
     font-size: 69px;
+    font-weight: bold;
     text-align: center;
     margin: 4rem 0;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-/* Seção Telegram */
+
 .telegram-cta {
     text-align: center;
     margin: 3rem 0;
 }
 
 .telegram-link {
+    font-weight: bold; /* Negrito */
+    font-size: 40px; /* Tamanho desejado */
     display: inline-flex;
     align-items: center;
     gap: 10px;
     color: #000000;
     text-decoration: none;
-    font-size: 1.4rem;
     padding: 1rem 2rem;
     transition: all 0.3s ease;
 }
 
-.telegram-link:hover {
-    background: #151414;
-    transform: translateY(-2px);
-}
+.telegram-link:hover { opacity: .6; }
 
 .telegram-icon {
     width: 28px;
     height: 28px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .telegram-link {
-        font-size: 1.1rem;
-        padding: 0.8rem 1.5rem;
-    }
-
-    .telegram-icon {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-/* Responsivo */
+/* ===== Responsividade ===== */
 @media (max-width: 1024px) {
     .features-container {
         flex-direction: column;
@@ -210,16 +173,36 @@
 }
 
 @media (max-width: 768px) {
-    .final-cta {
-        font-size: 32px;
+    /* Ajustes Gerais */
+    .converse { font-size: 80px; }
+    .subheading { font-size: 50px; }
+    .vibra { font-size: 35px; }
+
+    /* Botões */
+    .cta-button {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
     }
 
+    /* Cards de Recursos */
     .feature-card {
         padding: 1.5rem;
         min-height: auto;
     }
 
-    .feature-icon {
-        font-size: 2rem;
+    .feature-icon { font-size: 2rem; }
+
+    /* Chamadas Finais */
+    .final-cta { font-size: 32px; }
+
+    /* Telegram */
+    .telegram-link {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .telegram-icon {
+        width: 24px;
+        height: 24px;
     }
 }
