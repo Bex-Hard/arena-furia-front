@@ -18,7 +18,7 @@ const Register = () => {
         try {
             await register(username, email, password);
         } catch (err) {
-            setError('Falha ao registrar. Verifique os dados e tente novamente.');
+            setError('Falha ao registrar.');
         }
     };
 
