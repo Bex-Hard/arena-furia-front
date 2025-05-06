@@ -44,6 +44,7 @@
 .footer-title {
     display: flex;
     font-size: 22px;
+    gap: 8px;
 }
 
 .arena { font-weight: bold; text-transform: lowercase; }
